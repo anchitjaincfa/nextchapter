@@ -12,7 +12,7 @@ export default function AboutDataPage() {
     <ContentShell
       title="About your data"
       intro="What the current guided demo remembers—and how you can clear it."
-      breadcrumbs={[{ label: "Settings", href: "/settings" }, { label: "About your data" }]}
+      breadcrumbs={[{ label: "Preferences & information", href: "/settings" }, { label: "About your data" }]}
     >
       <div className={styles.prose}>
         <h2>Your choices stay in this tab</h2>
@@ -23,6 +23,7 @@ export default function AboutDataPage() {
           <li><strong>Quick Exit:</strong> clears the demo data and immediately leaves NextChapter.</li>
           <li><strong>Start again:</strong> clears the current answers and returns to the beginning.</li>
           <li><strong>Close the tab:</strong> normally removes its session storage.</li>
+          <li><strong>Browser history:</strong> may still show this visit, and session restore can reopen a page. If someone monitors your device, consider a private window or a safer device.</li>
         </ul>
 
         <h2>What the demo does not ask for</h2>
