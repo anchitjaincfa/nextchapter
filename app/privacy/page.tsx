@@ -1,50 +1,44 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ContentShell, styles } from "@/components/content/ContentShell";
 
 export const metadata: Metadata = {
   title: "Privacy | NextChapter",
-  description: "A plain-language explanation of NextChapter’s intended privacy approach."
+  description: "A plain-language explanation of privacy in the NextChapter prototype."
 };
 
 export default function PrivacyPage() {
   return (
-    <ContentShell title="Privacy" intro="We believe personal reflection deserves careful, plain-language data practices.">
+    <ContentShell
+      title="Privacy"
+      intro="We believe personal reflection deserves careful, plain-language data practices."
+      breadcrumbs={[{ label: "Privacy" }]}
+    >
       <div className={styles.notice}>
-        <strong>Prototype notice</strong>
-        This policy describes the intended behavior of the current prototype as of September 21, 2026. It must be reviewed and updated before production launch or whenever analytics, accounts, storage, or third-party services change.
+        <strong>Current prototype · updated September 21, 2026</strong>
+        <p>This statement covers the guided demo currently available in NextChapter. It will change if accounts, server storage, analytics, or other services are added.</p>
       </div>
       <div className={styles.prose}>
         <h2>The short version</h2>
-        <p>Collect only what the experience needs, explain why it is needed, and give people meaningful control. The prototype should not sell personal information or use private reflections for advertising.</p>
+        <p>The guided demo has no account and sends your answers nowhere. After you pass the safety check, your choices are held in temporary session storage in this browser tab so the demo can build your conversation map.</p>
 
-        <h2>Information you choose to provide</h2>
-        <p>You may enter answers, notes, preferences, and plans while using NextChapter. Product teams integrating these pages must document whether that information stays in the browser or is sent to a server before launch.</p>
+        <h2>What is stored</h2>
+        <p>The demo stores your current step and the multiple-choice answers you select. It does not ask you to type a name, email address, or free-form reflection.</p>
 
-        <h2>Basic technical information</h2>
-        <p>A hosted service may receive standard connection information such as browser type, device type, approximate location derived from an IP address, and timestamps. If analytics or error-reporting tools are introduced, their names, purposes, retention periods, and opt-out choices should be listed here.</p>
+        <h2>How long it lasts</h2>
+        <p>Session storage normally disappears when you close the tab. Choosing Quick Exit or starting again clears the demo data immediately. The prototype does not provide an account, cloud sync, or a server-side copy of your answers.</p>
 
-        <h2>How information should be used</h2>
-        <ul>
-          <li>To provide and maintain the experience.</li>
-          <li>To remember choices you ask the product to remember.</li>
-          <li>To protect the service from abuse and diagnose problems.</li>
-          <li>To comply with law and protect people’s safety when required.</li>
-        </ul>
-
-        <h2>Sharing and sale</h2>
-        <p>NextChapter should not sell personal information. Necessary service providers may process limited information on the product’s behalf under appropriate agreements. Any production implementation must list material providers here.</p>
-
-        <h2>Retention and deletion</h2>
-        <p>Keep personal information only as long as needed for the stated purpose. The production experience should provide a clear way to delete saved reflections and explain when backups expire.</p>
+        <h2>Hosting information</h2>
+        <p>Like most websites, the hosting service may receive standard connection information needed to deliver and protect the site, such as an IP address, browser type, and request time. The prototype does not intentionally use private answers for advertising or model training.</p>
 
         <h2>Your choices</h2>
-        <p>Visit <a href="/settings/about-data">About your data</a> for a readable summary of storage and deletion controls. Privacy rights differ by location; production contact and request details must be added before launch.</p>
+        <p>You can avoid starting the demo, use Quick Exit, start again to clear progress, or close the tab. Read <Link href="/settings/about-data">About your data</Link> for a concise summary.</p>
 
-        <h2>Not private or emergency care</h2>
-        <p>Do not use NextChapter to store information you would not want handled by a general consumer service. NextChapter is not a medical service or emergency response service. See the <a href="/resources">support resources</a> page if you need urgent help.</p>
+        <h2>Not for sensitive information or emergencies</h2>
+        <p>Do not use NextChapter to store passwords, financial account numbers, government identifiers, detailed medical records, or messages needed for an emergency response. NextChapter is not a medical service or emergency response service. See <Link href="/resources">support resources</Link> if you need urgent help.</p>
 
-        <h2>Policy changes</h2>
-        <p>Material changes should be dated and presented clearly. The effective date should reflect the day the production policy becomes binding, not the prototype drafting date.</p>
+        <h2>Before a production launch</h2>
+        <p>This notice must be updated if the product adds accounts, persistent storage, analytics, third-party tools, or new data collection. A working privacy contact and any legally required request process must also be provided.</p>
       </div>
     </ContentShell>
   );
