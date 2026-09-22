@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContentShell, styles } from "@/components/content/ContentShell";
+import { QuickExit } from "@/components/content/QuickExit";
 
 export const metadata: Metadata = {
   title: "Resources | NextChapter",
@@ -8,6 +9,8 @@ export const metadata: Metadata = {
 
 export default function ResourcesPage() {
   return (
+    <>
+      <QuickExit />
     <ContentShell
       title="Support and practical resources"
       intro="A short list of places to start when you or someone you care about needs more support."
@@ -16,6 +19,7 @@ export default function ResourcesPage() {
       <div className={styles.notice}>
         <strong>If there is immediate danger, call 911 or your local emergency number.</strong>
         <p>This page is informational and is not medical, legal, or crisis counseling advice.</p>
+        <p>Your browser history may show this visit. If someone monitors your device, consider a private window or a safer device.</p>
       </div>
       <ul className={styles.resourceList}>
         <li>
@@ -39,5 +43,6 @@ export default function ResourcesPage() {
       </ul>
       <p className={styles.source}>Availability and services can change. Verify details with the organization. NextChapter has no affiliation with these services, and this list has not been clinically reviewed.</p>
     </ContentShell>
+    </>
   );
 }
