@@ -2,24 +2,37 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import styles from "./content.module.css";
 
+type Crumb = { label: string; href?: string };
+
 type ContentShellProps = {
   eyebrow?: string;
   title: string;
   intro?: string;
   children: ReactNode;
   wide?: boolean;
+  breadcrumbs?: Crumb[];
 };
 
-export function ContentShell({ eyebrow, title, intro, children, wide = false }: ContentShellProps) {
+export function ContentShell({ eyebrow, title, intro, children, wide = false, breadcrumbs = [] }: ContentShellProps) {
+  const trail: Crumb[] = [{ label: "NextChapter", href: "/" }, ...breadcrumbs];
+
   return (
-    <main className={styles.page}>
-      <a className={styles.skipLink} href="#main-content">Skip to main content</a>
+    <main className={styles.page} id="main-content">
       <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
-        <Link href="/">NextChapter</Link>
-        <span aria-hidden="true">/</span>
-        <Link href="/guides">Guides</Link>
+        <ol>
+          {trail.map((crumb, index) => {
+            const current = index === trail.length - 1;
+            return (
+              <li key={`${crumb.label}-${index}`}>
+                {crumb.href && !current
+                  ? <Link href={crumb.href}>{crumb.label}</Link>
+                  : <span aria-current={current ? "page" : undefined}>{crumb.label}</span>}
+              </li>
+            );
+          })}
+        </ol>
       </nav>
-      <div id="main-content" className={wide ? styles.wide : styles.measure}>
+      <div className={wide ? styles.wide : styles.measure}>
         <header className={styles.hero}>
           {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
           <h1>{title}</h1>
