@@ -46,10 +46,10 @@ export default async function GuidePage({ params }: GuidePageProps) {
           </section>
         ))}
       </div>
-      <aside className={styles.nextStep} aria-labelledby="next-step">
+      <section className={styles.nextStep} aria-labelledby="next-step">
         <h2 id="next-step">One next step</h2>
         <p>{guide.nextStep}</p>
-      </aside>
+      </section>
     </ContentShell>
   );
 }
