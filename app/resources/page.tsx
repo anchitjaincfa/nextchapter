@@ -3,7 +3,7 @@ import { ContentShell, styles } from "@/components/content/ContentShell";
 
 export const metadata: Metadata = {
   title: "Resources | NextChapter",
-  description: "Trusted starting points for urgent support and aging-related services in the United States."
+  description: "Starting points for urgent support and aging-related services in the United States."
 };
 
 export default function ResourcesPage() {
@@ -26,7 +26,7 @@ export default function ResourcesPage() {
         </li>
         <li>
           <h2>National Domestic Violence Hotline</h2>
-          <p>Call <a href="tel:+18007997233">800-799-7233</a>, text <strong>START</strong> to <a href="sms:88788">88788</a>, or visit <a href="https://www.thehotline.org/">thehotline.org</a>.</p>
+          <p>Call <a href="tel:+18007997233">800-799-7233</a>, text <strong>START</strong> to <a href="sms:88788?&amp;body=START">88788</a>, or visit <a href="https://www.thehotline.org/">thehotline.org</a>.</p>
           <p>Confidential support, safety planning, and connections to local services in the United States.</p>
           <p className={styles.source}>Source: National Domestic Violence Hotline official website. Details checked September 21, 2026.</p>
         </li>
