@@ -26,7 +26,7 @@ export default function PrivacyPage() {
         <p>The demo stores your current step and the multiple-choice answers you select. It does not ask you to type a name, email address, or free-form reflection.</p>
 
         <h2>How long it lasts</h2>
-        <p>Session storage normally disappears when you close the tab. Choosing Quick Exit or starting again clears the demo data immediately. The prototype does not provide an account, cloud sync, or a server-side copy of your answers.</p>
+        <p>Session storage normally disappears when you close the tab. Choosing Quick Exit or starting again clears the demo data immediately. Browser history or a browser’s session-restore feature may still show that you visited the site. The prototype does not provide an account, cloud sync, or a server-side copy of your answers.</p>
 
         <h2>Hosting information</h2>
         <p>Like most websites, the hosting service may receive standard connection information needed to deliver and protect the site, such as an IP address, browser type, and request time. The prototype does not intentionally use private answers for advertising or model training.</p>
