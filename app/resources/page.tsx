@@ -11,10 +11,11 @@ export default function ResourcesPage() {
     <ContentShell
       title="Support and practical resources"
       intro="A short list of places to start when you or someone you care about needs more support."
+      breadcrumbs={[{ label: "Resources" }]}
     >
       <div className={styles.notice}>
         <strong>If there is immediate danger, call 911 or your local emergency number.</strong>
-        This page is informational and is not medical, legal, or crisis counseling advice.
+        <p>This page is informational and is not medical, legal, or crisis counseling advice.</p>
       </div>
       <ul className={styles.resourceList}>
         <li>
