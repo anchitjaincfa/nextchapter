@@ -1,1 +1,1 @@
-import type {NextConfig} from "next"; const config:NextConfig={reactStrictMode:true,poweredByHeader:false,output:"export"}; export default config;
+import type {NextConfig} from "next"; const config:NextConfig={reactStrictMode:true,poweredByHeader:false,output:"export",trailingSlash:true}; export default config;
