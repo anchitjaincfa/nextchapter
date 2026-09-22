@@ -6,6 +6,8 @@ import { getGuide, guides } from "@/lib/guides";
 
 type GuidePageProps = { params: Promise<{ slug: string }> };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return guides.map(({ slug }) => ({ slug }));
 }
@@ -22,10 +24,15 @@ export default async function GuidePage({ params }: GuidePageProps) {
   if (!guide) notFound();
 
   return (
-    <ContentShell eyebrow={guide.eyebrow} title={guide.title} intro={guide.summary}>
+    <ContentShell
+      eyebrow={guide.eyebrow}
+      title={guide.title}
+      intro={guide.summary}
+      breadcrumbs={[{ label: "Guides", href: "/guides" }, { label: guide.title }]}
+    >
       <p className={styles.meta}>{guide.readTime} · Designed for reading on screen or paper</p>
       <PrintButton />
-      <article>
+      <div>
         {guide.sections.map((section) => (
           <section className={styles.section} key={section.heading}>
             <h2>{section.heading}</h2>
@@ -38,7 +45,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
             )}
           </section>
         ))}
-      </article>
+      </div>
       <aside className={styles.nextStep} aria-labelledby="next-step">
         <h2 id="next-step">One next step</h2>
         <p>{guide.nextStep}</p>
