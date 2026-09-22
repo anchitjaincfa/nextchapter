@@ -23,4 +23,4 @@ function Box({eyebrow,title,text,children}:{eyebrow:string,title:string,text:str
 
 function safetyChoice(value:"safe"|"support",set:(s:Step)=>void){set(value==="safe"?"quiz":"help")}function stepLabel(s:Step){return ({home:"Welcome",privacy:"Privacy information",safety:"Safety check",quiz:"Time and rhythm",reveal:"Your exact choices",waiting:"A quiet moment",lee:"Demo guide",map:"Your conversation map",help:"Immediate support resources"} as const)[s]}
 
-function safetyChoice(value:"safe"|"support",set:(s:Step)=>void){set(value==="safe"?"quiz":"help")}function stepLabel(s:Step){return ({home:"Welcome",privacy:"Privacy information",safety:"Safety check",quiz:"Time and rhythm",reveal:"Your exact choices",waiting:"A quiet moment",lee:"Demo guide",map:"Your conversation map",help:"Immediate support resources"} as const)[s]}
+
