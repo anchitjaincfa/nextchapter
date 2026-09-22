@@ -3,33 +3,37 @@ import Link from "next/link";
 import { ContentShell, styles } from "@/components/content/ContentShell";
 
 export const metadata: Metadata = {
-  title: "Settings | NextChapter",
-  description: "Understand and manage your NextChapter experience."
+  title: "Preferences & information | NextChapter",
+  description: "Understand and adjust your NextChapter experience."
 };
 
 export default function SettingsPage() {
   return (
-    <ContentShell title="Settings" intro="Keep the experience comfortable, understandable, and under your control.">
+    <ContentShell
+      title="Preferences & information"
+      intro="Keep the experience comfortable, understandable, and under your control."
+      breadcrumbs={[{ label: "Preferences & information" }]}
+    >
       <ul className={styles.settingsList}>
         <li>
-          <strong>Text size</strong>
-          This interface respects your browser’s text-size and zoom settings. Use your browser controls to enlarge text without losing content.
+          <h2>Text size</h2>
+          <p>Use your browser’s zoom or text-size controls to make this page more comfortable to read.</p>
         </li>
         <li>
-          <strong>Motion</strong>
-          Product motion should follow your device’s reduced-motion preference.
+          <h2>Motion</h2>
+          <p>These content pages follow your device’s reduced-motion preference. The guided demo should be checked with that preference before release.</p>
         </li>
         <li>
-          <strong>Printing</strong>
-          Every complete guide includes a print control and a paper-friendly layout.
+          <h2>Printing</h2>
+          <p>Every complete guide includes a print control and a paper-friendly layout.</p>
         </li>
         <li>
-          <strong><Link href="/settings/about-data">About your data</Link></strong>
-          See what the prototype may store, what must be documented before launch, and how deletion should work.
+          <h2><Link href="/settings/about-data">About your data</Link></h2>
+          <p>See what the current guided demo stores in this tab and how to clear it.</p>
         </li>
         <li>
-          <strong><Link href="/privacy">Privacy</Link></strong>
-          Read the current plain-language privacy statement and prototype notice.
+          <h2><Link href="/privacy">Privacy</Link></h2>
+          <p>Read the current plain-language privacy statement.</p>
         </li>
       </ul>
     </ContentShell>
