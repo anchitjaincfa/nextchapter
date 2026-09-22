@@ -25,7 +25,7 @@ check "backend/database SDK referenced" '(@supabase|supabase-js|firebase|prisma|
 check "AI/model API referenced" '(openai|anthropic|claude|gemini|langchain)'
 check "chat or scoring implementation referenced" '(compatibility[_ -]?score|chat[_ -]?(room|message)|coach[_ -]?(booking|marketplace))'
 check "production secrets or service-role keys referenced" '(SERVICE_ROLE|SUPABASE_SERVICE|OPENAI_API_KEY|ANTHROPIC_API_KEY)'
-check "unapproved network form submission" '(formspree|typeform|api\.airtable|fetch\(["'"']https?://|axios\.(post|put|patch))'
+check "unapproved network submission" '(formspree|typeform|api\.airtable|fetch\(|axios\.(post|put|patch))'
 
 if [[ "$fail" -ne 0 ]]; then
   echo "The v0 demo must remain static, synthetic, and free of AI/chat/scores/coaching."
