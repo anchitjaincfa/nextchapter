@@ -13,6 +13,7 @@ export default function GuidesPage() {
     <ContentShell
       title="Guides for what comes next"
       intro="Practical ideas you can try at your own pace. Start where life feels most ready for a small change."
+      breadcrumbs={[{ label: "Guides" }]}
       wide
     >
       <h2 className={styles.sectionTitle}>Ready to explore</h2>
@@ -23,14 +24,14 @@ export default function GuidesPage() {
               <p className={styles.eyebrow}>{guide.eyebrow}</p>
               <h3>{guide.title}</h3>
               <p>{guide.summary}</p>
-              <Link href={`/guides/${guide.slug}`}>Read guide <span aria-hidden="true">→</span></Link>
+              <Link href={`/guides/${guide.slug}`}>Read {guide.title} <span aria-hidden="true">→</span></Link>
             </article>
           </li>
         ))}
       </ul>
 
       <h2 className={styles.sectionTitle}>More topics on the horizon</h2>
-      <p>These nine topic cards are previews only; they do not link to unfinished pages.</p>
+      <p>Here are a few areas we hope to explore next.</p>
       <ul className={styles.grid}>
         {futureTopics.map((topic) => (
           <li key={topic.title}>
