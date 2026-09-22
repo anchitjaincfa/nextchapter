@@ -61,10 +61,11 @@
 .settingsList li { border-top: 1px solid var(--line); padding: 1.1rem 0; }
 .settingsList strong { display: block; }
 .printButton { border: 2px solid #78402d; background: transparent; color: #663522; border-radius: 99px; padding: .65rem 1rem; font: 700 .95rem ui-sans-serif, system-ui, sans-serif; cursor: pointer; margin: 0 0 2rem; }
+.quickExit { position: fixed; top: 1rem; right: 1rem; z-index: 20; border: 0; border-radius: 99px; padding: .7rem 1rem; background: #26352f; color: white; font: 700 .95rem ui-sans-serif, system-ui, sans-serif; cursor: pointer; box-shadow: 0 3px 14px rgba(0,0,0,.18); }
 @media (max-width: 38rem) { .page { font-size: 1.05rem; } .breadcrumbs { margin-bottom: 1rem; } }
 @media print {
   .page { background: white; color: #111; padding: 0; font-size: 11pt; min-height: auto; }
-  .breadcrumbs, .printButton { display: none !important; }
+  .breadcrumbs, .printButton, .quickExit { display: none !important; }
   .measure, .wide { max-width: none; }
   .hero { padding: 0 0 12pt; }
   .hero h1 { font-size: 28pt; }
