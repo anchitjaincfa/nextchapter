@@ -1,45 +1,41 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ContentShell, styles } from "@/components/content/ContentShell";
 
 export const metadata: Metadata = {
   title: "About your data | NextChapter",
-  description: "A transparent summary of data handling decisions for the NextChapter prototype."
+  description: "What the current NextChapter prototype stores and how to clear it."
 };
 
 export default function AboutDataPage() {
   return (
-    <ContentShell title="About your data" intro="A transparent checklist for what the product remembers and what stays in your control.">
-      <div className={styles.notice}>
-        <strong>For this prototype</strong>
-        The final storage architecture is not asserted here. Before production, this page must be matched to the implemented behavior and named service providers.
-      </div>
+    <ContentShell
+      title="About your data"
+      intro="What the current guided demo remembers—and how you can clear it."
+      breadcrumbs={[{ label: "Settings", href: "/settings" }, { label: "About your data" }]}
+    >
       <div className={styles.prose}>
-        <h2>Questions the product must answer clearly</h2>
+        <h2>Your choices stay in this tab</h2>
+        <p>After the safety check, the demo stores your current step and multiple-choice answers in this tab’s temporary session storage. It does not send those answers to a NextChapter account or database.</p>
+
+        <h2>How to clear your choices</h2>
         <ul>
-          <li>Are reflections stored only in this browser, or synced to a server?</li>
-          <li>Can anyone else—including an administrator—read them?</li>
-          <li>How long are saved answers, logs, and backups retained?</li>
-          <li>Which companies provide hosting, analytics, authentication, or error reporting?</li>
-          <li>How can a person export or permanently delete their information?</li>
+          <li><strong>Quick Exit:</strong> clears the demo data and immediately leaves NextChapter.</li>
+          <li><strong>Start again:</strong> clears the current answers and returns to the beginning.</li>
+          <li><strong>Close the tab:</strong> normally removes its session storage.</li>
         </ul>
 
-        <h2>Recommended production controls</h2>
-        <ul>
-          <li>A visible “Delete my reflections” action with a confirmation step.</li>
-          <li>A separate analytics choice that is off until consent where required.</li>
-          <li>A simple export in a readable format.</li>
-          <li>Clear status messages after save, export, and deletion actions.</li>
-          <li>No use of private reflections for targeted advertising or model training without specific, informed consent.</li>
-        </ul>
+        <h2>What the demo does not ask for</h2>
+        <p>There is no sign-in, name, email address, free-form text box, cloud sync, or saved account history in the current guided demo.</p>
+
+        <h2>Standard website requests</h2>
+        <p>The hosting service may process ordinary connection information needed to deliver and protect the site, such as an IP address, browser type, and request time. This is separate from the choices held in your tab.</p>
 
         <h2>What not to enter</h2>
         <p>Avoid entering passwords, financial account numbers, government identifiers, detailed medical records, or information needed for an emergency response.</p>
 
-        <h2>Need support now?</h2>
-        <p>NextChapter is not monitored for urgent messages. Visit <a href="/resources">Support and practical resources</a> for crisis and aging-service contacts in the United States.</p>
-
         <h2>Related information</h2>
-        <p>Read the <a href="/privacy">prototype privacy statement</a>. Product owners should add a working privacy contact and jurisdiction-specific request process before launch.</p>
+        <p>Read the <Link href="/privacy">privacy statement</Link>, or visit <Link href="/resources">support resources</Link> if you need urgent help.</p>
       </div>
     </ContentShell>
   );
